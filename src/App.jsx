@@ -1,22 +1,21 @@
 import './App.css';
+import Header from './components/Header';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './components/Home'
-// import Posts from './components/Posts'
-import Post from './components/Post'
-import Clock from './components/Clock';
+import Products from './components/Products';
+import ProductDetail from './components/ProductDetail';
+import Error from './components/Error';
 
 function App() {
  
   return (
-    <Router>
-      <Route exact path='/' component={Home} />
-      <Clock />
-      <Switch>
-        <Route path='/post/:id' component={Post}/>
-        <Route path='/clock' component={Clock} />
-      </Switch>
-    </Router>
-
+     <Router>
+     {/* <Header /> */}
+     <Route exact path='/' component={Products}/>
+     <Switch>
+     <Route path='/product/:productId' component={ProductDetail}/>
+     <Route path='/error' component={Error}/>
+     </Switch>
+     </Router>
   );
 }
 
