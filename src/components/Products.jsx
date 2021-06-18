@@ -4,6 +4,7 @@ import { useSelector,useDispatch } from 'react-redux';
 import { setProducts } from '../Redux/Actions/productActions';
 import Product from './Product';
 import axios from 'axios';
+import Spinner from './Spinner';
 
 const Products = () => {
     const products = useSelector((state)=>state);
@@ -25,7 +26,8 @@ const Products = () => {
     }, []);
     return (
         <div>
-            <Product /> 
+            <Product />
+            
         </div>
     )
 }

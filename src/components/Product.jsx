@@ -2,12 +2,14 @@ import React,{Fragment} from 'react'
 // import PropTypes from 'prop-types'
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Spinner from './Spinner';
 
 const Product = () => {
     const products = useSelector((state)=>state.allProducts.products);
     // const {id,title,image,price,category} = products;
     return (
         <Fragment>
+            {Object.keys(products).length === 0 ? <Spinner /> : 
         <div className='w-full flex justify-center flex-wrap'>
            {products.map((product) => {
                return(
@@ -32,7 +34,7 @@ const Product = () => {
                    </div></Link>
                </li>)
            })}
-        </div>
+        </div>}
         </Fragment>
     )
 }
