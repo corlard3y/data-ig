@@ -11,15 +11,17 @@ const Products = () => {
 
     console.log("Products:" ,products);
 
-    const fetchProducts = async () => {
-        const response = await axios.get("https://fakestoreapi.com/products").catch((err) => {
-            console.log("Err",err);
-        }); 
-        dispatch(setProducts(response.data));
-    }
+    
 
     useEffect(() => {
+        const fetchProducts = async () => {
+            const response = await axios.get("https://fakestoreapi.com/products").catch((err) => {
+                console.log("Err",err);
+            }); 
+            dispatch(setProducts(response.data));
+        };
         fetchProducts();
+          // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     return (
         <div>

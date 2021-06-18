@@ -9,7 +9,7 @@ function App() {
  
   return (
      <Router>
-     {/* <Header /> */}
+     <Header />
      <Route exact path='/' component={Products}/>
      <Switch>
      <Route path='/product/:productId' component={ProductDetail}/>
